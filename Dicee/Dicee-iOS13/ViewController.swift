@@ -15,23 +15,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView2: UIImageView!
     
     var leftDiceNumber = 1
+    var rightDiceNumber = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // WHO          WHAT    VALUE
-//        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-//        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
-//        diceImageView1.alpha = 0.5
     }
     
     @IBAction func RollButtonPressed(_ sender: UIButton) {
-//         print("Button got tapped.")
-//        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceFour")
-//        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceFour")
+        print("leftDiceNumber at beginning = \(leftDiceNumber)")
+        print("rightDiceNumber at beginning = \(rightDiceNumber)")
         
         diceImageView1.image =  [ UIImage(imageLiteralResourceName: "DiceOne"), UIImage(imageLiteralResourceName: "DiceTwo"), UIImage(imageLiteralResourceName: "DiceThree"), UIImage(imageLiteralResourceName: "DiceFour"), UIImage(imageLiteralResourceName: "DiceFive"), UIImage(imageLiteralResourceName: "DiceSix") ][leftDiceNumber]
+        diceImageView2.image =  [ UIImage(imageLiteralResourceName: "DiceOne"), UIImage(imageLiteralResourceName: "DiceTwo"), UIImage(imageLiteralResourceName: "DiceThree"), UIImage(imageLiteralResourceName: "DiceFour"), UIImage(imageLiteralResourceName: "DiceFive"), UIImage(imageLiteralResourceName: "DiceSix") ][rightDiceNumber]
         
+        leftDiceNumber = leftDiceNumber + 1
+        rightDiceNumber = rightDiceNumber - 1
+        
+        print("leftDiceNumber at the end = \(leftDiceNumber)")
+        print("rightDiceNumber at the end = \(rightDiceNumber)")
         
     }
     
