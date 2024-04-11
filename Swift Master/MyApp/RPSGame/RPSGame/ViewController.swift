@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myChoiceLabel: UILabel!
     
     var comChoice: Rps = Rps(rawValue: Int.random(in: 0...2))!
-    var myChoice: Rps = Rps.rock
+    var myChoice: Rps = Rps(rawValue: Int.random(in: 0...2))!
     
     // 앱의 화면에 들어오면 처음 실행되는 함수
     override func viewDidLoad() {
@@ -38,13 +38,12 @@ class ViewController: UIViewController {
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
         // 가위바위보를 선택해서 그 정보를 저장해야 함
         
-        //        guard let title = sender.currentTitle else {
-        //            return
-        //        }
-        
         // (선택) 버튼의 문자를 가져옴
-        let title = sender.currentTitle!
-        print(title)
+        guard let title = sender.currentTitle else {
+            return
+        }
+        // let title = sender.currentTitle!
+        // print(title)
         
         switch title {
         case "가위":
@@ -108,21 +107,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        //        1. 컴퓨터의 이미지뷰에 준비 표시
-        //        2. 컴퓨터의 레이블에 준비 표시
+        // 1. 컴퓨터의 이미지뷰에 준비 표시
+        // 2. 컴퓨터의 레이블에 준비 표시
         comImageView.image = #imageLiteral(resourceName: "ready")
         comChoiceLabel.text = "준비"
         
-        //        3. 나의 선택 이미지뷰에 준비 표시
-        //        4. 나의 선택 레이블에 준비 표시
+        // 3. 나의 선택 이미지뷰에 준비 표시
+        // 4. 나의 선택 레이블에 준비 표시
         myImageView.image = #imageLiteral(resourceName: "ready")
         myChoiceLabel.text = "준비"
         
-        //        5. 메인 레이블 "선택하세요" 표시
+        // 5. 메인 레이블 "선택하세요" 표시
         mainLabel.text = "선택하세요"
         
-        //        6. 컴퓨터가 다시 랜덤 가위바위보를 선택하고 저장
+        // 6. 컴퓨터가 다시 랜덤 가위바위보를 선택하고 저장
         comChoice = Rps(rawValue: Int.random(in: 0...2))!
+        myChoice = Rps(rawValue: Int.random(in: 0...2))!
         
     }
     
