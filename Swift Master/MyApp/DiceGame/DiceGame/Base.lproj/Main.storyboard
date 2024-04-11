@@ -39,17 +39,20 @@
                                 <state key="normal" title="ROLL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QdM-YD-ru5"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hof-qz-0u5">
                                 <rect key="frame" x="20" y="341.66666666666669" width="353" height="169"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-gf-H6I">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-gf-H6I">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="169"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hdf-gf-H6I" secondAttribute="height" multiplier="1:1" id="USy-8F-aNP"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-fe-878">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-fe-878">
                                         <rect key="frame" x="184" y="0.0" width="169" height="169"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Kbu-fe-878" secondAttribute="height" multiplier="1:1" id="Jz3-5r-CFD"/>
@@ -71,6 +74,10 @@
                             <constraint firstItem="hof-qz-0u5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kOm-81-Mp1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstImageView" destination="hdf-gf-H6I" id="LPQ-Ps-ENY"/>
+                        <outlet property="secondImageView" destination="Kbu-fe-878" id="P6p-xD-zKS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,6 +85,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="black1" width="399" height="399"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
